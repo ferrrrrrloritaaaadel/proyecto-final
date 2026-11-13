@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descubre Sucre - Guía Turística</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="pantalla-bienvenida" class="bienvenida">
+        <video autoplay muted loop playsinline class="video-fondo">
+            <source src="video/sucre.mp4" type="video/mp4">
+        </video>
+        <div class="capa-oscura"></div>
+        <button class="btn-entrar" onclick="entrarPagina()">Entrar</button>
+    </div>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Descubre Sucre</h1>
+            <p>Explora los mejores lugares turísticos, restaurantes y entretenimiento de la Ciudad Blanca</p>
+        </div>
+    </header>
+
+    <section class="controles">
+        <input type="text" id="buscador" placeholder="Buscar lugar..." onkeyup="buscarLugar()">
+        
+        <div class="filtros">
+            <button class="btn-filtro activo" onclick="filtrar('todos', this)">Todos</button>
+            <button class="btn-filtro" onclick="filtrar('turismo', this)">Lugares Turísticos</button>
+            <button class="btn-filtro" onclick="filtrar('restaurantes', this)">Restaurantes</button>
+            <button class="btn-filtro" onclick="filtrar('entretenimiento', this)">Entretenimiento</button>
+        </div>
+    </section>
+
+    <main class="contenedor-grid" id="contenedor-lugares">
+    </main>
+
+    <footer>
+        <p>Proyecto de Sistemas - Sucre, Bolivia 🇧🇴</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

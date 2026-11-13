@@ -1,0 +1,294 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(rgba(18, 18, 18, 0.9), rgba(18, 18, 18, 0.9)), 
+                url('img/fondo_sucre.jpg') center/cover fixed no-repeat;
+    background-color: #121212;
+    color: #e0e0e0;
+    overflow: hidden;
+}
+
+body.desbloqueado {
+    overflow: auto;
+}
+
+.bienvenida {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #111;
+    transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+.bienvenida.oculta {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.video-fondo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.capa-oscura {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+}
+
+.btn-entrar {
+    position: relative;
+    z-index: 3;
+    padding: 18px 55px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: white;
+    background: rgba(192, 57, 43, 0.9);
+    border: 2px solid white;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7);
+    transition: all 0.3s ease;
+}
+
+.btn-entrar:hover {
+    background: #c0392b;
+    transform: scale(1.08);
+    box-shadow: 0 12px 30px rgba(192, 57, 43, 0.8);
+}
+
+.hero {
+    background: transparent;
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.controles {
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+#buscador {
+    width: 100%;
+    max-width: 500px;
+    padding: 12px 20px;
+    border: 2px solid #333;
+    border-radius: 25px;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    outline: none;
+    background-color: #1e1e1e;
+    color: white;
+}
+
+#buscador::placeholder {
+    color: #888;
+}
+
+#buscador:focus {
+    border-color: #e74c3c;
+}
+
+.filtros {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.btn-filtro {
+    padding: 10px 20px;
+    border: 1px solid #333;
+    background-color: #1e1e1e;
+    color: #bbb;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-filtro:hover, .btn-filtro.activo {
+    background-color: #c0392b;
+    color: white;
+    border-color: #c0392b;
+}
+
+.contenedor-grid {
+    max-width: 1200px;
+    margin: 0 auto 50px auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+}
+
+.tarjeta {
+    background: #1e1e1e;
+    border: 1px solid #2c2c2c;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+    display: flex;
+    flex-direction: column;
+}
+
+.tarjeta img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    background-color: #2c2c2c;
+}
+
+.tarjeta-info {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.etiqueta {
+    display: inline-block;
+    background-color: #3b1916;
+    color: #e74c3c;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    width: fit-content;
+}
+
+.tarjeta h3 {
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.tarjeta p {
+    font-size: 0.95rem;
+    color: #b0b0b0;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.btn-maps {
+    display: block;
+    text-align: center;
+    background-color: #1e824c;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 8px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    transition: 0.3s;
+}
+
+.btn-maps:hover {
+    background-color: #27ae60;
+}
+
+.seccion-reseñas {
+    border-top: 1px solid #2c2c2c;
+    padding-top: 15px;
+    margin-top: auto;
+}
+
+.seccion-reseñas h4 {
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    color: #cccccc;
+}
+
+.lista-reseñas {
+    list-style: none;
+    max-height: 100px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+    font-size: 0.85rem;
+}
+
+.lista-reseñas li {
+    background: #252525;
+    color: #d0d0d0;
+    padding: 6px 10px;
+    border-radius: 6px;
+    margin-bottom: 5px;
+    border-left: 3px solid #e74c3c;
+}
+
+.form-reseña {
+    display: flex;
+    gap: 5px;
+}
+
+.form-reseña input {
+    flex-grow: 1;
+    padding: 8px;
+    border: 1px solid #333;
+    background-color: #121212;
+    color: white;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    outline: none;
+}
+
+.form-reseña input:focus {
+    border-color: #e74c3c;
+}
+
+.form-reseña button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: 0.3s;
+}
+
+.form-reseña button:hover {
+    background-color: #444;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #0d0d0d;
+    color: #888;
+    border-top: 1px solid #222;
+}
